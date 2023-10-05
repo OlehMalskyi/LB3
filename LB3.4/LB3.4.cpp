@@ -13,20 +13,18 @@ int main()
     double R1; // радіус внутрішнього кола
     double R2; // радіус зовнішнього кола
 
+
     cout << "x = "; cin >> x;
     cout << "y = "; cin >> y;
     cout << "R1 = "; cin >> R1;
     cout << "R2 = "; cin >> R2;
 
-    // розрахунок відстані від точки до початку координат
-    double distance = sqrt(x * x + y * y);
-
     // розгалуження в повній формі
-    if ((distance >= R1 && distance <= R2) && (x >= 0 && y >= 0 || x <= 0 && y <= 0))
+    if ((y <= R1 && y >= R2 && y >= 0 && x >= 0) || (y <= -R2 && y >= -R1 && y <= 0 && x <= 0))
         cout << "Yes" << endl;
     else
         cout << "No" << endl;
 
-    cin.get();
-    return 0;
+        cin.get();
+        return 0;
 }
